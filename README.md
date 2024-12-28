@@ -38,9 +38,7 @@ drag-drop/
 
 ## Demo
 
-<video width="720" height="480" controls>
-  <source src="https://github.com/Bushra-naeem/drag-drop/blob/main/src/assets/videos/demo.mp4" type="video/mp4">
-  Your browser does not support the video tag.
+<video src="https://github.com/Bushra-naeem/drag-drop/blob/main/src/assets/videos/demo.mp4" width="720" height="480" controls>
 </video>
 
 ## Installation

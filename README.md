@@ -36,10 +36,9 @@ drag-drop/
 
 ---
 
-## Demo
+## Screenshot
 
-<video src="https://github.com/Bushra-naeem/drag-drop/blob/main/src/assets/videos/demo.mp4" width="720" height="480" controls>
-</video>
+![drag drop preview](image.png)
 
 ## Installation
 

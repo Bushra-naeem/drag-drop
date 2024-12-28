@@ -1,4 +1,4 @@
-# React Drag and Drop Task Board
+# Drag and Drop Task Board
 
 A simple task management board built with React. The project allows users to drag and drop tasks between "In Progress" and "Completed" columns without any external library. It also includes functionality to add new tasks dynamically with randomly assigned light background colors.
 

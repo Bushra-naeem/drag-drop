@@ -11,9 +11,8 @@
 .drag-drop-board {
   display: flex;
   justify-content: space-around;
-  /* height: 100px;
-  width: 100px;
-  background-color: red; */
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
 .task-header {
@@ -30,5 +29,44 @@
   align-items: center;
   margin: 5px;
   padding: 5px;
-  background-color: aqua;
+}
+
+.add-task-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.task-input {
+  padding: 9px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 240px;
+  margin-left: 5px;
+}
+
+.add-task-button {
+  padding: 6px 10px;
+  font-size: 18px;
+  background-color: lightgray;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.add-task-button:hover {
+  background-color: darkgray;
+}
+
+@media (max-width: 768px) {
+  .drag-drop-board {
+    flex-direction: column;
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+  .task-input {
+    width: 100%;
+  }
 }

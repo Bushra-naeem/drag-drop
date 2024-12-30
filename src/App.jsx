@@ -37,6 +37,7 @@ function App() {
   });
 
   const [newTaskName, setNewTaskName] = useState("");
+  const [draggedTask, setDraggedTask] = useState(null);
 
   useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(tasks));
@@ -67,20 +68,31 @@ function App() {
     setNewTaskName("");
   };
 
-  const onDragStart = (event, id) => {
-    event.dataTransfer.setData("id", id);
+  const onDragStart = (task) => {
+    setDraggedTask(task);
   };
 
-  const onDrop = (event, category) => {
-    let id = event.dataTransfer.getData("id");
-    let newTasks = tasks.filter((task) => {
-      if (task.name == id) {
-        task.category = category;
-      }
-      return task;
-    });
+  const onDragEnd = () => {
+    setDraggedTask(null);
+  };
 
-    setTasks([...newTasks]);
+  const onDrop = (category) => {
+    if (!draggedTask) return;
+
+    const updatedTasks = tasks.map((task) =>
+      task.name === draggedTask.name ? { ...task, category } : task
+    );
+
+    setTasks(updatedTasks);
+    setDraggedTask(null);
+  };
+
+  const onTouchStart = (task) => {
+    setDraggedTask(task);
+  };
+
+  const onTouchEnd = () => {
+    setDraggedTask(null);
   };
 
   const getTask = () => {
@@ -93,7 +105,10 @@ function App() {
       tasksToRender[t.category].push(
         <div
           key={t.name}
-          onDragStart={(e) => onDragStart(e, t.name)}
+          onDragStart={() => onDragStart(t)}
+          onDragEnd={onDragEnd}
+          onTouchStart={() => onTouchStart(t)}
+          onTouchEnd={onTouchEnd}
           draggable
           className="task-card"
           style={{ backgroundColor: t.bgcolor }}
@@ -114,9 +129,8 @@ function App() {
         <div
           className="wip"
           onDragOver={(e) => e.preventDefault()}
-          onDrop={(e) => {
-            onDrop(e, "wip");
-          }}
+          onDrop={() => onDrop("wip")}
+          onTouchEnd={() => onDrop("wip")}
         >
           <div className="task-header">In-PROGRESS</div>
           {getTask().wip}
@@ -134,8 +148,10 @@ function App() {
           </div>
         </div>
         <div
+          className="complete"
           onDragOver={(e) => e.preventDefault()}
-          onDrop={(e) => onDrop(e, "complete")}
+          onDrop={() => onDrop("complete")}
+          onTouchEnd={() => onDrop("complete")}
         >
           <div className="task-header">COMPLETED</div>
           {getTask().complete}
@@ -144,4 +160,5 @@ function App() {
     </div>
   );
 }
+
 export default App;

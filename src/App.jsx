@@ -9,27 +9,27 @@ function App() {
       ? JSON.parse(storedTasks)
       : [
           {
-            name: "STORY-21: Fix search bug",
+            name: "Fix search bug",
             category: "complete",
             bgcolor: "lightgrey",
           },
           {
-            name: "STORY-22: Update user profile UI",
+            name: "Update user profile UI",
             category: "complete",
             bgcolor: "lightblue",
           },
           {
-            name: "STORY-23: Add login functionality",
+            name: "Add login functionality",
             category: "wip",
             bgcolor: "lightgreen",
           },
           {
-            name: "STORY-24: Optimize dashboard load time",
+            name: "Optimize dashboard load time",
             category: "wip",
             bgcolor: "lightyellow",
           },
           {
-            name: "STORY-25: Implement password feature",
+            name: "Implement password feature",
             category: "wip",
             bgcolor: "lightcoral",
           },

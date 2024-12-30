@@ -31,6 +31,9 @@
   padding: 5px;
 }
 
+.complete {
+  width: 300px;
+}
 .add-task-container {
   display: flex;
   align-items: center;
@@ -67,6 +70,9 @@
     margin-right: 30px;
   }
   .task-input {
+    width: 100%;
+  }
+  .complete {
     width: 100%;
   }
 }

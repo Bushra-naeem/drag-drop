@@ -36,9 +36,9 @@ drag-drop/
 
 ---
 
-## Screenshot
+## Live Demo
 
-![drag drop preview](image.png)
+https://github.com/user-attachments/assets/60cf10e7-54c6-400a-81ee-aec5075f5e39
 
 ## Installation
 
